@@ -1,5 +1,5 @@
-import React from 'react';
-import {Modal, View, Image, Text, StyleSheet, Button} from 'react-native';
+import React from "react";
+import { Modal, View, Image, Text, StyleSheet, Button } from "react-native";
 
 const placeDetail = props => {
   let modalContent = null;
@@ -13,7 +13,11 @@ const placeDetail = props => {
   }
 
   return (
-    <Modal onRequestClose={props.onModalClosed} visible={props.selectedPlace !== null} animationType="slide">
+    <Modal
+      onRequestClose={props.onModalClosed}
+      visible={props.selectedPlace !== null}
+      animationType="slide"
+    >
       <View style={styles.modalContainer}>
         {modalContent}
         <View>
@@ -27,16 +31,16 @@ const placeDetail = props => {
 
 const styles = StyleSheet.create({
   modalContainer: {
-    margin: 22,
+    margin: 22
   },
   placeImage: {
-    width: '100%',
-    height: 200,
+    width: "100%",
+    height: 200
   },
   placeName: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: 28,
-  },
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 28
+  }
 });
 export default placeDetail;
