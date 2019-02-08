@@ -1,8 +1,11 @@
-import { ADD_PLACE, DELETE_PLACE } from '../actions/actionTypes'
+import {
+  ADD_PLACE,
+  DELETE_PLACE
+} from "../actions/actionTypes";
 
 const initialState = {
   places: []
-}
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -10,26 +13,24 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         places: state.places.concat({
-          key: `${Math.random()}`,
+          key: Math.random(),
           name: action.placeName,
           image: {
             uri:
-              'http://vivaglammagazine.com/wp-content/uploads/2015/07/happy-cow.jpg'
+              "https://c1.staticflickr.com/5/4096/4744241983_34023bf303_b.jpg"
           }
         })
-      }
+      };
     case DELETE_PLACE:
       return {
         ...state,
         places: state.places.filter(place => {
-          return place.key !== state.selectedPlace.key
-        }),
-        selectedPlace: null
-      }
-
+          return place.key !== action.placeKey;
+        })
+      };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default reducer
+export default reducer;
