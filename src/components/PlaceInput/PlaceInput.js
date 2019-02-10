@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import { View, TextInput, Button, StyleSheet } from 'react-native'
+import React, { Component } from "react";
+import { View, TextInput, Button, StyleSheet } from "react-native";
 
-import DefaultInput from '../UI/DefaultInput/DefaultInput'
+import DefaultInput from "../UI/DefaultInput/DefaultInput";
 
-const PlaceInput = props => (
+const placeInput = props => (
   <DefaultInput
-    placeholder='Place Name'
+    placeholder="Place Name"
     value={props.placeName}
     onChangeText={props.onChangeText}
   />
-)
+);
 
-export default PlaceInput
+export default placeInput;
